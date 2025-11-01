@@ -16,6 +16,7 @@ class BloomFilter:
     def __init__(self):
         self.bit_array = bitarray(M)
         self.bit_array.setall(0)
+        # Use sorted set - O(logn) for lookups as opposed to O(n)
         self.db = SortedSet()
 
     def insert_into_bit_array(self, plain: str) -> None:
